@@ -4,10 +4,10 @@
  *
  * @author MSeixas
  */
-class pessoas extends Model {
+class pessoasModel extends Model {
     public $_table = 'pessoas';
 
-        public function listAllPessoas(){
+    public function cons(){
         $where = 'excluido IS NOT TRUE';
         return $this->read($where,null,null,'descricao ASC');
     }

@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+        <script src="//code.jquery.com/jquery-1.9.1.js"></script>        
+        <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+        <link type="text/css" href="/web-files/style/css/base.css" rel="stylesheet" />
+        <link type="text/css" href="/web-files/style/css/home.css" rel="stylesheet" />
+        <link type="text/css" href="/web-files/style/css/op.css" rel="stylesheet" />
+
+
+        <title>SISTEMA PAPAGAIO VERDADEIRO</title>
+
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="bar">
+                <div id="sisname">
+                    Sistema Papagaio Verdadeiro
+                </div>
+                <div id="user">
+                    Usuário: Murilo
+                    
+                </div>
+            </div>
+            <div id="header"></div>
+            <div id="home"><a href="../index">HOME</a></div>
+            <div id="menu">
+                <div>
+                    <div id="consulta" class="title"><p>Consulta de Ninhos</p></div>
+                </div>
+                <div class="consultaTop"">
+                    <div>Nome</div>
+                </div>
+                <?php foreach ($view_pessoas as $pessoas): ?>
+                <div class="consultaLine""><p><?php echo $pessoas['descricao'];?></p></div>
+                <?php endforeach; ?>
+            </div>
+            <div id="footer">
+                <p>Projeto Papagaio Verdadeiro - Glaucia Seixas</p>
+            </div>
+            </div>
+        </div>
+
+        <script>
+            $(function() {
+            });
+        </script>
+    </body>
+</html> 
