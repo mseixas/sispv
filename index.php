@@ -10,6 +10,7 @@ require_once 'system/controller.php';
 require_once 'system/model.php';
 
 function __autoload($file) {
+    //echo '<br>file: '. $file.'<br>';
     if (file_exists(MODELS.$file.'.php'))
             require_once MODELS.$file.'.php';
     else if (file_exists(HELPERS.$file.'Helper.php'))

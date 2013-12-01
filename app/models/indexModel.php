@@ -5,5 +5,4 @@
  * @author MSeixas
  */
 class index extends Model{
-    public $_tabela = 'olhos';
 }

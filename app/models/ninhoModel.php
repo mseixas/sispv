@@ -1,16 +1,18 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of ninhoModel
  *
  * @author MSeixas
  */
-class ninhoModel {
-    //put your code here
+class ninhoModel extends Model {
+    public $_table = "ninho";
+    public function __construct() {
+        parent::__construct();
+    }
+    public function cad(){
+    }
+    public function cons(){
+        print_r($this->read('numero = 5333'));
+        return $this->read();
+    }
 }

@@ -4,9 +4,9 @@ class indexController extends Controller {
 
     public function index_action() {
         $model = new menuModel();
-        $menu_cadastros = $model->listMenu('cadastros IS TRUE');
-        $menu_consultas = $model->listMenu('consultas IS TRUE');
-        $menu_relatorios = $model->listMenu('relatorios IS TRUE');
+        $menu_cadastros = $model->listMenu('tipo = 1');
+        $menu_consultas = $model->listMenu('tipo = 2');
+        $menu_relatorios = $model->listMenu('tipo = 3');
         
         $data['cadastros'] = $menu_cadastros;
         $data['consultas'] = $menu_consultas;
