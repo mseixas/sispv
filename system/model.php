@@ -36,4 +36,7 @@ class Model{
         $sql = "DELETE FROM `{$this->_table}` WHERE {$where}";
         return $this->db->query($sql);
     }
+    public function query($sql){
+        return $this->db->query($sql);
+    }
 }
