@@ -12,7 +12,11 @@ class pessoasController extends Controller {
     }
 
     public function cad() {
-        $this->view('Cadastro/pessoasCad');
+        $model = new cargoModel();
+        $cargo = $model->cons();
+        $data['cargo'] = $cargo;
+        
+        $this->view('Cadastro/pessoasCad', $data);
     }
 
     public function cons() {
@@ -25,8 +29,7 @@ class pessoasController extends Controller {
 
     public function cadastrar() {
         $model = new pessoasModel();
-        $descricao = array('descricao' => $_POST['descricao']);
-
+        $descricao = array('descricao' => $_POST['descricao'], 'cargo' => $_POST['cargo']);
         $data = $descricao;
         $model->insert($data);
         $this->cons();

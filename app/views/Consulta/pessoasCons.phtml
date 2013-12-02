@@ -1,3 +1,4 @@
+<?php ?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
@@ -33,17 +34,23 @@
                     <div id="consulta" class="title"><p>Consulta de Pessoas</p></div>
                 </div>
                 <div class="consultaTop"">
-                    <div style="padding-right: 75px;">Nome</div>
+                    <div >Nome</div>
+                    <div >Cargo</div>
                 </div>
                 <form action="excluir" method="post">
                     <?php foreach ($view_pessoas as $pessoas): ?>
                         <div class="consultaLine"">
                             <div class="consultaInfo">
-                                <div class="consultaCheck">
-                                    <input type="checkbox" id="del[]" name="del[]" value="<?php echo $pessoas['id'];?>">
+
+                                <div class='pessoasInfo'>
+                                    <div class="consultaCheck">
+                                        <input type="checkbox" id="del[]" name="del[]" value="<?php echo $pessoas['id']; ?>">
+                                    </div><?php echo $pessoas['nome']; ?>
                                 </div>
-                                <a href="teste" class="consultaButton">EDITAR</a>
-                                <a href="edit/id/<?php echo $pessoas['id']; ?>"<p><?php echo $pessoas['descricao']; ?></p></a>
+                                <div class='pessoasInfo'>
+                                    <?php echo $pessoas['cargo']; ?>
+                                    <a href="teste" class="consultaButton">EDITAR</a>
+                                </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
