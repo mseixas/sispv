@@ -60,13 +60,16 @@ class System {
                 $i++;
             }
         } else {
-            $ind = array();
-            $value = array();
+//            $ind = array();
+//            $value = array();
+            $ind = null;
+            $value = null;
         }
         if (count($ind) == count($value) && !empty($ind) && !empty($value)) {
             $this->_params = array_combine($ind, $value);
         } else {
-            $this->_params = array();
+            //$this->_params = array();
+            $this->_params = null;
         }
     }
 

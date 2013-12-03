@@ -6,17 +6,23 @@
  * @author MSeixas
  */
 class pessoasController extends Controller {
-
+    
     public function index_action() {
         
     }
-
     public function cad() {
         $model = new cargoModel();
+        $id = $this->getParams('id');
+        
+        if ($id != null) {
+            $this->editar($id);
+        } else {
+            $cargo = $model->cons();
+        }
         $cargo = $model->cons();
         $data['cargo'] = $cargo;
-        
         $this->view('Cadastro/pessoasCad', $data);
+        
     }
 
     public function cons() {
@@ -35,10 +41,8 @@ class pessoasController extends Controller {
         $this->cons();
     }
 
-    public function editar() {
+    public function editar($id) {
         $model = new pessoasModel();
-        //print_r($_POST['del']);
-        //$where = 'id IN ('..')';
     }
 
     public function excluir() {

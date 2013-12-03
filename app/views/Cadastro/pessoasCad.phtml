@@ -15,7 +15,6 @@
 
     </head>
     <body>
-
         <div class="container">
             <div class="bar">
                 <div id="sisname">
@@ -23,7 +22,6 @@
                 </div>
                 <div id="user">
                     Usuário: Murilo
-
                 </div>
             </div>
             <div id="header"></div>
@@ -31,34 +29,43 @@
             <div id="menu">
                 <div>
                     <div id="cadastro" class="title"><p>Cadastro de Pessoas</p></div>
-
                     <div class="form">
                         <form action="cadastrar" method="post">
-                            <p>NOME:<input type="text" name="descricao"></p>
-                            <p>CARGO:<select name='cargo'>
+                            <p>
+                                <label for="descricao" class="cell">NOME:</label>
+                                <input id="descricao" name="descricao" required="required" type="text" value="">
+                            </p>
+                            <p>
+                                <label class="cell">CARGO:</label>
+                                <select name='cargo'>
                                     <?php foreach ($view_cargo as $cargo) : ?>
-                                    <option value="<?php echo $cargo['id']; ?>"><?php echo $cargo['descricao'] ?></option>
+                                        <option value="<?php echo $cargo['id']; ?>"><?php echo $cargo['descricao'] ?></option>
                                     <?php endforeach; ?>
-                                    </select></p>
-                            <div class="controle">
-                                <input type="submit" class="cadastrarButton" value="CADASTRAR">
-        <!--                        <input type="submit" class="excluirButton" value="EXCLUIR">
-                                <input type="submit" class="editarButton" value="EDITAR">-->
-                            </div>
-                        </form>
-                    </div>
+                                </select></p></td>
+                            </p>
+                            </tr>
+                            </table>
 
+                    </div>
+                    <div class="controle">
+                        <input type="submit" class="cadastrarButton" value="CADASTRAR">
+                        <a href="cons" class="consultaAllButton">Listar Todos</a>
+<!--                        <input type="submit" class="excluirButton" value="EXCLUIR">
+                        <input type="submit" class="editarButton" value="EDITAR">-->
+                    </div>
+                    </form>
                 </div>
+
             </div>
+
             <div id="footer">
                 <p>Projeto Papagaio Verdadeiro - Glaucia Seixas</p>
             </div>
         </div>
-    </div>
 
-    <script>
-        $(function() {
-        });
-    </script>
-</body>
+        <script>
+            $(function() {
+            });
+        </script>
+    </body>
 </html> 

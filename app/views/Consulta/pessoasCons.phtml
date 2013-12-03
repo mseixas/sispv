@@ -33,15 +33,19 @@
                 <div>
                     <div id="consulta" class="title"><p>Consulta de Pessoas</p></div>
                 </div>
-                <div class="consultaTop"">
-                    <div >Nome</div>
-                    <div >Cargo</div>
-                </div>
                 <form action="excluir" method="post">
-                    <?php foreach ($view_pessoas as $pessoas): ?>
-                        <div class="consultaLine"">
-                            <div class="consultaInfo">
+                    <div class="consultaTop">
+                        <div class="coluna"><div class="check"></div>
+                            Nome
+                        </div>
 
+                        <div class="coluna"><div class="edit"></div>
+                            Cargo
+                        </div>
+                    </div>
+                    <?php foreach ($view_pessoas as $pessoas): ?>
+                        <div class="consultaLine">
+                            <div class="consultaInfo">
                                 <div class='pessoasInfo'>
                                     <div class="consultaCheck">
                                         <input type="checkbox" id="del[]" name="del[]" value="<?php echo $pessoas['id']; ?>">
@@ -58,6 +62,7 @@
             <div class="controle">
                 <!--<input type="submit" class="cadastrarButton" value="CADASTRAR">-->
                 <input type="submit" class="excluirButton" value="EXCLUIR">
+                <a href="cad" class="cadastrarNovoButton">Cadastrar Novo</a>
                 <!--<input type="submit" class="editarButton" value="EDITAR">-->
             </div>
         </form>
