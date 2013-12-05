@@ -1,0 +1,97 @@
+/* 
+    Created on : Nov 30, 2013, 9:54:42 PM
+    Author     : MSeixas
+*/
+
+.consultaTop,
+.consultaLine{
+    width: 100%;
+    display: table;
+    margin-top: 10px;
+    padding-left: 25px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.consultaTop{
+    height: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    border: 3px orange solid;
+    border-radius: 10px;
+    opacity:0.65;
+    -moz-opacity: 0.65;
+    filter: alpha(opacity=65);
+    background: orange;
+}
+.consultaTop > div {
+    display: table-cell;
+    text-align: center;
+    font-size: larger;
+}
+
+.consultaLine{
+    border-bottom: 3px orange solid;
+}
+.pessoasInfo{
+    width: 50%;
+    text-align: center;
+    float: left;
+}
+.check{
+    float: left;
+    width: 1px;
+    height: 20px;
+}
+.edit{
+    float: right;
+    width: 71px;
+    height: 20px;
+}
+.coluna{
+    text-align: center;
+    width: 50%;
+}
+
+.consultaCheck{
+    float: left;
+    display: block;
+}
+.cell{
+    text-align: right;
+    font-weight: bold;
+}
+/*Editar*/
+.consultaButton{
+    margin-right: 10px;
+    float: right;
+    display: block;
+    background: white;
+    padding: 5px;
+    cursor: pointer;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    border: 0px;
+    box-sizing: border-box;
+    opacity:0.75;
+    -moz-opacity: 0.75;
+    filter: alpha(opacity=75);
+}
+.consultaButton:hover{
+    float: right;
+    display: block;
+    background: white;
+    //padding: 15px;
+    color: white;
+    background: blue;
+}
+/*Fim botão editar*/
+

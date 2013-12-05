@@ -18,4 +18,8 @@ class pessoasModel extends Model {
         $sql = "UPDATE `{$this->_table}` SET excluido='1' WHERE id IN ({$where})";
         $this->query($sql);
     }
+    public function findById($id){
+        $id = 'id = '.$id;
+        return $this->read($id);
+    }
 }

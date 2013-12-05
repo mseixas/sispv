@@ -25,21 +25,44 @@
                 </div>
             </div>
             <div id="header"></div>
-            <div id="home"><a href="../index">HOME</a></div>
+            <div id="home"><a href="/index">HOME</a></div>
             <div id="menu">
+                <?php
+                            if (isset($view_editar)) {
+                                foreach ($view_editar as $editar) {
+                                    $editar_id = $editar['id'];
+                                    $editar_nome = $editar['descricao'];
+                                    $editar_cargo = $editar['cargo'];
+                                    $button = 'editar';
+                                    $button_name = 'ATUALIZAR';
+                                    $action = '/id/'.$editar_id;
+                                } 
+                            }
+                                else {
+                                    $button = 'cadastrar';
+                                    $button_name = 'CADASTRAR';
+                                    $editar_id = '';
+                                    $editar_nome = '';
+                                    $editar_cargo = '';
+                                    $action = '';
+                                }
+                            
+                            ?>
                 <div>
                     <div id="cadastro" class="title"><p>Cadastro de Pessoas</p></div>
                     <div class="form">
-                        <form action="cadastrar" method="post">
+                        <form action="/pessoas/cadastrarAction<?php echo $action; ?>" method="post">
+                            
+                            <input id="descricao" name="id" hidden="" type="text" value="<?php echo $editar_id; ?>">
                             <p>
                                 <label for="descricao" class="cell">NOME:</label>
-                                <input id="descricao" name="descricao" required="required" type="text" value="">
+                                <input id="descricao" name="descricao" required="required" type="text" value="<?php echo $editar_nome;?>">
                             </p>
                             <p>
                                 <label class="cell">CARGO:</label>
                                 <select name='cargo'>
                                     <?php foreach ($view_cargo as $cargo) : ?>
-                                        <option value="<?php echo $cargo['id']; ?>"><?php echo $cargo['descricao'] ?></option>
+                                        <option value="<?php echo $cargo['id']; ?>" <?php if($cargo['id'] == $editar_cargo) echo "selected";?>> <?php echo $cargo['descricao'] ?></option>
                                     <?php endforeach; ?>
                                 </select></p></td>
                             </p>
@@ -48,8 +71,9 @@
 
                     </div>
                     <div class="controle">
-                        <input type="submit" class="cadastrarButton" value="CADASTRAR">
-                        <a href="cons" class="consultaAllButton">Listar Todos</a>
+                        <input type="submit" class="<?php echo $button; ?>Button" value="<?php echo $button_name; ?>">
+                        <!--<input type="submit" class="cadastrarButton" value="CADASTRAR">-->
+                        <a href="/pessoas/cons" class="consultaAllButton">Listar Todos</a>
 <!--                        <input type="submit" class="excluirButton" value="EXCLUIR">
                         <input type="submit" class="editarButton" value="EDITAR">-->
                     </div>

@@ -93,5 +93,4 @@ class System {
         $action = $this->_action;
         $app->$action();
     }
-
 }

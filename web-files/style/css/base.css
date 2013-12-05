@@ -1,0 +1,214 @@
+div{
+    border: 0px black solid;          
+}
+body{
+    //background-image: url(../img/arvore.png);
+    background-image: url(https://lh3.googleusercontent.com/-NUD-9oJ3Fws/TrwpkcsxL2I/AAAAAAAAFbQ/6EXMTbYBsb8/13.jpg);
+    background-position: bottom left;
+    //background-repeat: no-repeat;
+    background-size: 400px 400px;
+}
+.container{
+    position: absolute;
+    width: 1001px;
+    padding-left: 25%; 
+    padding-right: 25%;
+    
+    display: table;
+}
+/*Inicio do header*/
+.bar{
+    float: top;
+    width: 1000px;
+    height: 30px;
+    //border-bottom: 3px gray solid;
+    border-top: 5px green solid;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    border-color: green;
+    padding-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+#sisname{
+    float: left;
+    width: 60%;
+    padding-left: 10px;
+}
+#user{
+    float: right;
+    width: 30%;
+    padding-right: 10px;
+    text-align: right;
+}
+#header{
+    float: top;
+    width: 1000px;
+    height: 200px;
+    text-align: center;
+    background-image: url(../img/header.jpg);
+    background-position: center;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -o-border-radius: 30px;
+    -ms-border-radius: 30px;
+    border-radius: 30px;
+
+}  
+/*Fim do header*/
+/*botão home*/
+#home {
+    width: 100%;
+    padding: 5px;
+    display: block;
+    border-bottom: 5px green solid;
+    margin-bottom: 10px;
+    font-size: 18px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    
+}
+#home > a {
+    display: table-cell;
+    padding: 10px;
+    background: green;
+    color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    opacity:0.65;
+    -moz-opacity: 0.65;
+    filter: alpha(opacity=65);
+}
+#home > a:hover{
+    background: orange;
+}
+/*fim botao home*/
+
+/*footer*/
+#footer{
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    //border-top: 5px green solid;
+    margin-bottom: 50px;
+    border-bottom: 5px green solid;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+}
+#footer > p {
+    background: #D3D3D3;
+    font-weight: bold;
+}
+/*end footer*/
+
+
+/*Modulos*/
+.controle{
+    margin-top: 20px;
+    //background: green;
+    text-align: center;
+}
+button{
+}
+button:hover{
+    background: blue;
+    color: white;
+}
+
+input[type=checkbox]{
+}
+
+input[type=submit],
+.consultaAllButton,
+.cadastrarNovoButton{
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    box-sizing: border-box;
+    opacity:0.75;
+    -moz-opacity: 0.75;
+    filter: alpha(opacity=75);
+    -webkit-box-shadow: 10px 10px 15px #000000;
+    -moz-box-shadow: 10px 10px 15px #000000;
+    -o-box-shadow: 10px 10px 15px #000000;
+    -ms-box-shadow: 10px 10px 15px #000000;
+    box-shadow: 10px 10px 15px #000000;
+}
+.cadastrarButton:hover,
+.excluirButton:hover,
+.editarButton:hover,
+.consultaAllButton:hover,
+.cadastrarNovoButton:hover,
+.consultaButton:hover{
+    opacity:1.0;
+    -moz-opacity: 1.0;
+    filter: alpha(opacity=100);
+    color: white;
+    -moz-transition: all 0.6s;
+    -webkit-transition: all 0.6s;
+    -o-transition: all 0.6s;
+    ms-transition: all 0.6s;
+}
+.cadastrarButton{
+    background-color: green;
+    color: white;
+}
+.excluirButton{
+    background: red;
+    color: white;
+}
+.editarButton{
+    background: blue;
+    color: white;
+}
+.consultaAllButton{
+    background: orange;
+    color: white;
+}
+.cadastrarNovoButton{
+    background: green;
+    color: white;
+}
+
+
+input[type=text],
+input[type=date],
+input[type=number],
+input[type=time]{
+    border:2px green solid;
+}
+input[type=text]:hover,
+input[type=date]:hover,
+input[type=number]:hover,
+input[type=time]:hover{
+    background: #9ACD32;
+}
+select {
+    width: 200px;
+    overflow: hidden;
+    border:2px green solid ;
+}
+text{
+    background: black;
+    width: 240px;
+    height: 34px;
+}

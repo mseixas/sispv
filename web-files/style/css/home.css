@@ -1,0 +1,98 @@
+#menu{
+    display: table;
+    width: 100%;
+}
+.title{
+    border-bottom-width: 4px;
+    height: 50px;
+    font-size: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#cadastro{
+    border-bottom-color: green;
+}
+#consulta{
+    border-bottom-color: orange;
+}
+#relatorio{
+    border-bottom-color: blue;
+}
+#cadastro > p{
+    color: green;
+}
+#consulta > p{
+    color: orange;
+}
+#relatorio > p{
+    color: blue;
+}
+.navegacao{
+    display: table;
+    height:  200px;
+}
+.navegacao > a > div{
+    display: block;
+    margin: 10px;
+    float: left;
+    width: 200px;
+    text-align: center;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-box-shadow: 10px 10px 15px #000000;
+    -moz-box-shadow: 10px 10px 15px #000000;
+    -o-box-shadow: 10px 10px 15px #000000;
+    -ms-box-shadow: 10px 10px 15px #000000;
+    box-shadow: 10px 10px 15px #000000;
+    //background: white;
+}
+.cad{
+    color: green;
+    font-size: 30px;
+    height: 200px;
+    border: 2px green solid;
+    line-height: 200px;
+}
+.cons{
+    color: orange;
+    font-size: 30px;
+    height: 200px;
+    border: 2px orange solid;
+    line-height: 200px;
+}
+.relat{
+    color: blue;
+    font-size: 20px;
+    line-height: 50px;
+    border: 2px blue solid;
+    width: 200px;
+    height: 50px;
+}
+.cad:hover,
+.cons:hover,
+.relat:hover{
+    opacity:0.65;
+    -moz-opacity: 0.65;
+    filter: alpha(opacity=65);
+     cursor: pointer;
+     color: white;
+     -moz-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    ms-transition: all 0.4s;
+}
+.cad:hover{
+    background: green;
+}
+.cons:hover{
+    background: orange;
+    
+}
+.relat:hover{
+    background: blue;
+}
+
+
