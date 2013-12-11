@@ -49,27 +49,34 @@
     box-shadow: 10px 10px 15px #000000;
     //background: white;
 }
+.cad,
+.cons,
+.relat{
+    font-size: 20px;
+    line-height: 50px;
+    height: 50px;
+}
 .cad{
     color: green;
-    font-size: 30px;
-    height: 200px;
+/*    font-size: 30px;
+    height: 200px;*/
     border: 2px green solid;
-    line-height: 200px;
+/*    line-height: 200px;*/
 }
 .cons{
     color: orange;
-    font-size: 30px;
-    height: 200px;
+/*    font-size: 30px;
+    height: 200px;*/
     border: 2px orange solid;
-    line-height: 200px;
+/*    line-height: 200px;*/
 }
 .relat{
     color: blue;
-    font-size: 20px;
-    line-height: 50px;
+/*    font-size: 20px;
+    line-height: 50px;*/
     border: 2px blue solid;
     width: 200px;
-    height: 50px;
+/*    height: 50px;*/
 }
 .cad:hover,
 .cons:hover,
