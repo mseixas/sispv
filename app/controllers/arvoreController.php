@@ -5,16 +5,13 @@
  *
  * @author MSeixas
  */
-class pessoasController extends Controller {
+class arvoreController extends Controller {
 
     public function index_action() {
-        
     }
 
     public function cad() {
-
-        $pessoasModel = new pessoasModel();
-        $cargoModel = new cargoModel();
+        $pessoasModel = new arvoreModel();
 
         $id = $this->getParams('id');
         if ($id != null) {
@@ -25,17 +22,18 @@ class pessoasController extends Controller {
                 $data['editar'] = array();
             }
         }
-        $cargo = $cargoModel->cons();
-        $data['cargo'] = $cargo;
-        $this->view('Cadastro/pessoasCad', $data);
+        else{
+            $data = '';
+        }
+        $this->view('Cadastro/arvoreCad', $data);
     }
-
+    
     public function cons() {
-        $model = new pessoasModel();
-        $pessoas = $model->cons();
-        $data['pessoas'] = $pessoas;
+        $model = new arvoreModel();
+        $arvore = $model->cons();
+        $data['arvore'] = $arvore;
 
-        $this->view('Consulta/pessoasCons', $data);
+        $this->view('Consulta/arvoreCons', $data);
     }
 
     public function editarAction() {
@@ -44,10 +42,13 @@ class pessoasController extends Controller {
 
     public function cadastrarAction() {
         $id = $this->getParams('id');
-        $model = new pessoasModel();
+        $model = new arvoreModel();
         if ($id == NULL) {
-            $descricao = array('descricao' => $_POST['descricao'], 'cargo' => $_POST['cargo']);
-            $data = $descricao;
+            $info = array('descricao' => $_POST['descricao'], 
+                               'nome_cientifico' => $_POST['nome_cientifico'], 
+                               'autor' => $_POST['autor'],
+                               'ano' => $_POST['ano']);
+            $data = $info;
             $model->insert($data);
             $this->cons();
         }
@@ -60,7 +61,7 @@ class pessoasController extends Controller {
     }
 
     public function excluirAction() {
-        $model = new pessoasModel();
+        $model = new arvoreModel();
         $where = $_POST['del'];
         $where = implode(', ', $where);
         $model->excluir($where);

@@ -31,38 +31,40 @@
             <div id="home"><a href="/index">HOME</a></div>
             <div id="menu">
                 <div>
-                    <div id="consulta" class="title"><p>Consulta de Pessoas</p></div>
+                    <div id="consulta" class="title"><p>Consulta de &Aacute;rvores</p></div>
                 </div>
-                <form action="/pessoas/excluirAction" method="post">
-                    
+                <form action="/arvore/excluirAction" method="post">
                     <div class='consultaDiv'>
                         <table class="tableCons" CELLSPACING = 0>
                             <tr class="titleCons">
                                 <td></td>
-                                <td>Nome</td>
-                                <td>Cargo</td>
+                                <td>Nome Comum</td>
+                                <td>Nome Científico</td>
+                                <td>Autor</td>
+                                <td>Ano</td>
                                 <td></td>
                                 <td></td>
                             </tr>
-                            <?php foreach ($view_pessoas as $pessoas): ?>
+                            <?php foreach ($view_arvore as $arvore): ?>
                                 <tr class="dataCons">
                                     <td class="separadorCons""><div class="consultaCheck">
-                                            <input type="checkbox" id="del[]" name="del[]" value="<?php echo $pessoas['id']; ?>">
+                                            <input type="checkbox" id="del[]" name="del[]" value="<?php echo $arvore['id']; ?>">
                                         </div></td>
-                                    <td><?php echo $pessoas['nome']; ?></td>
-                                    <td><?php echo $pessoas['cargo']; ?></td>
-                                    <td class="separadorCons"><a href="/pessoas/cad/id/<?php echo $pessoas['id']; ?>" class="consultaButton"><img src="/web-files/style/img/visualizar.ico"></a></td>
-                                    <td class="separadorCons"><a href="/pessoas/cad/id/<?php echo $pessoas['id']; ?>" class="consultaButton">EDITAR</a></td>
+                                    <td><?php echo $arvore['descricao']; ?></td>
+                                    <td><?php echo $arvore['nome_cientifico']; ?></td>
+                                    <td><?php echo $arvore['autor']; ?></td>
+                                    <td><?php echo $arvore['ano']; ?></td>
+                                    <td class="separadorCons"><a href="/arvore/cad/id/<?php echo $arvore['id']; ?>" class="consultaButton"><img src="/web-files/style/img/visualizar.ico"></a></td>
+                                    <td class="separadorCons"><a href="/arvore/cad/id/<?php echo $arvore['id']; ?>" class="consultaButton">EDITAR</a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </table>
-                    </div>
-                    
+                    </div>                    
             </div>
             <div class="controle">
                 <!--<input type="submit" class="cadastrarButton" value="CADASTRAR">-->
                 <input type="submit" class="excluirButton" value="EXCLUIR">
-                <a href="/pessoas/cad" class="cadastrarNovoButton">Cadastrar Novo</a>
+                <a href="/arvore/cad" class="cadastrarNovoButton">Cadastrar Novo</a>
                 <!--<input type="submit" class="editarButton" value="EDITAR">-->
             </div>
         </form>

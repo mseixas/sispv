@@ -212,3 +212,7 @@ text{
     width: 240px;
     height: 34px;
 }
+
+label:hover{
+    cursor: pointer;    
+}

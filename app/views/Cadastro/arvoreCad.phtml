@@ -1,6 +1,7 @@
-<html>
+﻿<html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+        
+        <title>SISTEMA PAPAGAIO VERDADEIRO</title>
 
         <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.9.1.js"></script>        
@@ -11,7 +12,7 @@
         <link type="text/css" href="/web-files/style/css/op.css" rel="stylesheet" />
 
 
-        <title>SISTEMA PAPAGAIO VERDADEIRO</title>
+        
 
     </head>
     <body>
@@ -32,7 +33,10 @@
                     foreach ($view_editar as $editar) {
                         $editar_id = $editar['id'];
                         $editar_nome = $editar['descricao'];
-                        $editar_cargo = $editar['cargo'];
+                        $editar_cientifico = $editar['nome_cientifico'];
+                        $editar_autor = $editar['autor'];
+                        $editar_ano = $editar['ano'];
+
                         /* Botão */
                         $button = 'editar';
                         $button_name = 'ATUALIZAR';
@@ -41,7 +45,10 @@
                 } else {
                     $editar_id = '';
                     $editar_nome = '';
-                    $editar_cargo = '';
+                    $editar_cientifico = '';
+                    $editar_autor = '';
+                    $editar_ano = '';
+
                     /* Botão */
                     $action = '';
                     $button = 'cadastrar';
@@ -49,26 +56,34 @@
                 }
                 ?>
                 <div>
-                    <div id="cadastro" class="title"><p>Cadastro de Pessoas</p></div>
+                    <div id="cadastro" class="title"><p>Cadastro de &Aacute;rvores</p></div>
                     <div class="form">
-                        <form action="/pessoas/cadastrarAction<?php echo $action; ?>" method="post">
+                        <form action="/arvore/cadastrarAction<?php echo $action; ?>" method="post">
 
                             <input id="id" name="id" hidden="" type="text" value="<?php echo $editar_id; ?>">
                             <p>
-                                <label for="descricao" class="cell">NOME:</label>
-                            </p>
-                            <p>                             
-                                <input id="descricao" name="descricao" required="required" type="text" value="<?php echo $editar_nome; ?>">
+                                <label for="descricao" class="cell">NOME COMUM:</label>
                             </p>
                             <p>
-                                <label class="cell">CARGO:</label>
+                                <input id="descricao" name="descricao" size="50" required="required" type="text" value="<?php echo $editar_nome; ?>">
                             </p>
-                            <p> 
-                                <select name='cargo'>
-                                    <?php foreach ($view_cargo as $cargo) : ?>
-                                        <option value="<?php echo $cargo['id']; ?>" <?php if ($cargo['id'] == $editar_cargo) echo "selected"; ?>> <?php echo $cargo['descricao'] ?></option>
-                                    <?php endforeach; ?>
-                                </select></p></td>
+                            <p>
+                                <label for="nome_cientifico" class="cell">NOME CIENT&Iacute;FICO:</label>
+                            </p>
+                            <p>
+                                <input id="nome_cientifico" name="nome_cientifico" size="50" required="required" type="text" value="<?php echo $editar_cientifico; ?>">
+                            </p>
+                            <p>
+                                <label for="autor" class="cell">AUTOR:</label>
+                            </p>
+                            <p>
+                                <input id="autor" name="autor" size="50" required="required" type="text" value="<?php echo $editar_autor; ?>">
+                            </p>
+                            <p>
+                                <label for="ano" class="cell">ANO:</label>
+                            </p>
+                            <p>
+                                <input id="ano" name="ano" size="5" required="required" type="text" value="<?php echo $editar_ano; ?>">
                             </p>
                             </tr>
                             </table>
@@ -77,7 +92,7 @@
                     <div class="controle">
                         <input type="submit" class="<?php echo $button; ?>Button" value="<?php echo $button_name; ?>">
                         <!--<input type="submit" class="cadastrarButton" value="CADASTRAR">-->
-                        <a href="/pessoas/cons" class="consultaAllButton">Listar Todos</a>
+                        <a href="/arvore/cons" class="consultaAllButton">Listar Todos</a>
 <!--                        <input type="submit" class="excluirButton" value="EXCLUIR">
                         <input type="submit" class="editarButton" value="EDITAR">-->
                     </div>

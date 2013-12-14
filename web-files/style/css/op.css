@@ -1,48 +1,8 @@
 /* 
     Created on : Nov 30, 2013, 9:54:42 PM
-    Author     : MSeixas
-*/
+    Author     : MSeixas*/
 
-.consultaTop,
-.consultaLine{
-    width: 100%;
-    display: table;
-    margin-top: 10px;
-    padding-left: 25px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -o-border-radius: 10px;
-    -ms-border-radius: 10px;
-    border-radius: 10px;
-    font-weight: bold;
-}
 
-.consultaTop{
-    height: 25px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 25px;
-    border: 3px orange solid;
-    border-radius: 10px;
-    opacity:0.65;
-    -moz-opacity: 0.65;
-    filter: alpha(opacity=65);
-    background: orange;
-}
-.consultaTop > div {
-    display: table-cell;
-    text-align: center;
-    font-size: larger;
-}
-
-.consultaLine{
-    border-bottom: 3px orange solid;
-}
-.pessoasInfo{
-    width: 50%;
-    text-align: center;
-    float: left;
-}
 .check{
     float: left;
     width: 1px;
@@ -68,7 +28,7 @@
 }
 /*Editar*/
 .consultaButton{
-    margin-right: 10px;
+    margin-right: 5px;
     float: right;
     display: block;
     background: white;
@@ -89,9 +49,32 @@
     float: right;
     display: block;
     background: white;
-    //padding: 15px;
     color: white;
     background: blue;
 }
 /*Fim botão editar*/
+
+
+.separadorCons{
+    width: 10px; 
+}
+.tableCons{
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+}
+.titleCons > td{
+    margin-top: 10px;
+    font-weight: bold;
+    height: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    opacity:0.65;
+    -moz-opacity: 0.65;
+    filter: alpha(opacity=65);
+    background: orange;    
+}
+.dataCons > td{
+    border-bottom: 2px orange solid;
+}
 
