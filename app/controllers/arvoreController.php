@@ -45,17 +45,20 @@ class arvoreController extends Controller {
         $model = new arvoreModel();
         if ($id == NULL) {
             $info = array('descricao' => $_POST['descricao'], 
-                               'nome_cientifico' => $_POST['nome_cientifico'], 
-                               'autor' => $_POST['autor'],
-                               'ano' => $_POST['ano']);
+                          'nome_cientifico' => $_POST['nome_cientifico'], 
+                          'autor' => $_POST['autor'],
+                          'ano' => $_POST['ano']);
             $data = $info;
             $model->insert($data);
             $this->cons();
         }
         else{
-            $descricao = array('descricao' => $_POST['descricao'], 'cargo' => $_POST['cargo']);
+            $info = array('descricao' => $_POST['descricao'], 
+                          'nome_cientifico' => $_POST['nome_cientifico'], 
+                          'autor' => $_POST['autor'],
+                          'ano' => $_POST['ano']);
             $where = 'id = '.$_POST['id'];
-            $model->update($descricao, $where);
+            $model->update($info, $where);
             $this->cons();
         }
     }

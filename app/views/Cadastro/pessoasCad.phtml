@@ -33,6 +33,9 @@
                         $editar_id = $editar['id'];
                         $editar_nome = $editar['descricao'];
                         $editar_cargo = $editar['cargo'];
+                        $editar_email = $editar['email'];
+                        $editar_login = $editar['login'];
+                        $editar_senha = 'disabled';
                         /* Botão */
                         $button = 'editar';
                         $button_name = 'ATUALIZAR';
@@ -42,6 +45,9 @@
                     $editar_id = '';
                     $editar_nome = '';
                     $editar_cargo = '';
+                    $editar_email = '';
+                    $editar_login = '';
+                    $editar_senha = '';
                     /* Botão */
                     $action = '';
                     $button = 'cadastrar';
@@ -59,6 +65,24 @@
                             </p>
                             <p>                             
                                 <input id="descricao" name="descricao" required="required" type="text" value="<?php echo $editar_nome; ?>">
+                            </p>
+                            <p>
+                                <label for="email" class="cell">E-MAIL:</label>
+                            </p>
+                            <p>                             
+                                <input id="email" name="email" required="required" type="text" value="<?php echo $editar_email; ?>">
+                            </p>
+                            <p>
+                                <label for="login" class="cell">LOGIN:</label>
+                            </p>
+                            <p>                             
+                                <input id="login" name="login" required="required" type="text" value="<?php echo $editar_login; ?>">
+                            </p>
+                            <p>
+                                <label for="senha" class="cell">SENHA:</label>
+                            </p>
+                            <p>                             
+                                <input id="senha" name="senha" required="required" type="password" <?php echo $editar_senha ?>>
                             </p>
                             <p>
                                 <label class="cell">CARGO:</label>

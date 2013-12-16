@@ -46,14 +46,21 @@ class pessoasController extends Controller {
         $id = $this->getParams('id');
         $model = new pessoasModel();
         if ($id == NULL) {
-            $descricao = array('descricao' => $_POST['descricao'], 'cargo' => $_POST['cargo']);
+            $descricao = array('descricao' => $_POST['descricao'],
+                'cargo' => $_POST['cargo'],
+                'email' => $_POST['email'],
+                'email' => $_POST['login']
+            );
             $data = $descricao;
             $model->insert($data);
             $this->cons();
-        }
-        else{
-            $descricao = array('descricao' => $_POST['descricao'], 'cargo' => $_POST['cargo']);
-            $where = 'id = '.$_POST['id'];
+        } else {
+            $descricao = array('descricao' => $_POST['descricao'],
+                'cargo' => $_POST['cargo'],
+                'email' => $_POST['email'],
+                'login' => $_POST['login']
+            );
+            $where = 'id = ' . $_POST['id'];
             $model->update($descricao, $where);
             $this->cons();
         }
