@@ -1,5 +1,10 @@
-<?php
-//var_dump($_SESSION);
+<?php 
+ if(isset($view_erro)){
+     $erro = '<div class="alertLogin">Login/Senha incorreto!</div>';
+ }
+ else {
+     $erro = '';
+ }
 ?>
 ﻿<html>
     <head>
@@ -27,6 +32,7 @@
             <form method="POST" action="/index/logar">
             <div class="loginBlock">
                 <div class="loginBox">
+                    <?php echo $erro; ?>
                     <p>
                         <label for="login" class="cell">Login:</label>
                     </p>

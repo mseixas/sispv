@@ -12,4 +12,7 @@ class Controller extends System{
         return require_once(VIEWS.$nome.'.phtml');
         exit();
     }
+    public function redirect($local){
+        header("Location: $local");
+    }
 }

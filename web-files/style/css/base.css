@@ -10,10 +10,11 @@ body{
 }
 .container{
     position: absolute;
-    width: 1001px;
-    padding-left: 25%; 
-    padding-right: 25%;
-
+    /*width: 1001px;*/
+    width: 50%;
+/*    padding-left: 25%; 
+    padding-right: 25%;*/
+    margin-left: 25%;
     display: table;
 }
 /*Inicio do header*/
@@ -288,5 +289,20 @@ label:hover{
 }
 .logout{
     float: right;
-
+}
+.alertLogin{
+    opacity:0.8;
+    -moz-opacity: 0.8;
+    filter: alpha(opacity=80);
+     -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 3px;
+    background: red;
+    color: white;
+    width: 100%;
+    border: 2px red solid;
 }

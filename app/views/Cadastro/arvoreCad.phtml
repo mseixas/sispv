@@ -1,31 +1,7 @@
-<?php 
-    session_start();
-?>
-﻿<html>
-    <head>
-        <title>SISTEMA PAPAGAIO VERDADEIRO</title>
-
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-        <script src="//code.jquery.com/jquery-1.9.1.js"></script>        
-        <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-
-        <link type="text/css" href="/web-files/style/css/base.css" rel="stylesheet" />
-        <link type="text/css" href="/web-files/style/css/home.css" rel="stylesheet" />
-        <link type="text/css" href="/web-files/style/css/op.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="container">
-            <div class="bar">
-                <div id="sisname">
-                    Sistema Papagaio Verdadeiro
-                </div>
-                <div id="user">
-                    Usuário: <?php echo $_SESSION['nom']; ?>
-                </div>
-            </div>
-            <div id="header"></div>
-            <div id="home"><a href="/index">HOME</a></div>
-            <div id="menu">
+<?php  
+session_start();
+require '/app/views/templateDefault.php';
+?> 
                 <?php
                 if (isset($view_editar)) {
                     foreach ($view_editar as $editar) {

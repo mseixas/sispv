@@ -4,16 +4,15 @@ class indexController extends Controller {
 
     public function index_action() {
         session_start();
-        if(isset($_SESSION['id'])){
-             $this->home();
-        }
-        else{
+        if (isset($_SESSION['id'])) {
+            $this->home();
+        } else {
             $this->view('login');
         }
     }
 
     public function home() {
-        
+
         $model = new menuModel();
         $menu_cadastros = $model->listMenu('tipo = 1');
         $menu_consultas = $model->listMenu('tipo = 2');
@@ -32,12 +31,15 @@ class indexController extends Controller {
         $pass = md5($_POST['senha']);
         $ok = $model->logar($login, $pass);
         if ($ok) {
-            $this->home();
+            $local = "/index";
+            $this->redirect($local);
         } else {
-            $this->view('login');
+            $data['erro'] = TRUE;
+            $this->view('login', $data);
         }
     }
-    public function deslogar(){
+
+    public function deslogar() {
         session_start();
         session_destroy();
         $this->index_action();
