@@ -3,11 +3,11 @@
 class indexController extends Controller {
 
     public function index_action() {
-        session_start();
+//        session_start();
         if (isset($_SESSION['id'])) {
             $this->home();
         } else {
-            $this->view('login');
+            $this->redirect('/login');
         }
     }
 
@@ -40,9 +40,9 @@ class indexController extends Controller {
     }
 
     public function deslogar() {
-        session_start();
+//        session_start();
         session_destroy();
-        $this->index_action();
+        $this->redirect('/login');
     }
 
 }

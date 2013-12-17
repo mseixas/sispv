@@ -5,7 +5,12 @@
  * @author MSeixas
  */
 class Controller extends System{
+    public function __construct() {
+        parent::__construct();
+        session_start();
+    }
     protected function view($nome, $vars = null){
+        //session_start();
         if(is_array($vars) && count($vars) > 0){
             extract($vars, EXTR_PREFIX_ALL, 'view');
         }

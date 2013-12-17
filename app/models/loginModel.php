@@ -16,10 +16,8 @@ class loginModel extends Model {
     public function logar($login, $pass) {
         $where = 'login = \'' . $login . '\' AND senha = \'' . $pass . '\' AND excluido IS NOT TRUE';
         $data = $this->read($where);
-
-
+        
         if ($data != NULL) {
-
             session_start();
             $_SESSION['id'] = $data[0]['id'];
             $_SESSION['nom'] = $data[0]['descricao'];
