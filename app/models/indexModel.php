@@ -4,5 +4,5 @@
  *
  * @author MSeixas
  */
-class index extends Model{
+class indexModel extends Model{
 }

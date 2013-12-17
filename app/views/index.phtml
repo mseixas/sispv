@@ -1,3 +1,5 @@
+<?php       
+?> 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
@@ -19,52 +21,53 @@
                 <div id="sisname">
                     Sistema Papagaio Verdadeiro
                 </div>
-                <div id="user">
-                    Usuário: Murilo
+                <div id="user" >
+                    Usuário: <?php echo $_SESSION['nom']; ?>
+                    <a href="/index/deslogar">Log Out</a>
                 </div>
             </div>
             <div id="header"></div>
-            <div id="home"><a href="index">HOME</a></div>
+            <div id="home"><a href="/index">HOME</a></div>
             <div id="menu">
                 <div>
                     <div id="cadastro" class="title"><p>Cadastro</p></div>
                     <div class="navegacao">
-                    <?php foreach ($view_cadastros as $cadastro): ?>
+                        <?php foreach ($view_cadastros as $cadastro): ?>
                             <a href="<?php echo $cadastro['url'] ?>"><div class="cad">
-                                    <div><?php echo $cadastro['descricao'];?></div>
+                                    <div><?php echo $cadastro['descricao']; ?></div>
                                 </div></a>
-                       
-                    <?php endforeach; ?>
+
+                        <?php endforeach; ?>
                     </div>
                     <div id="consulta" class="title"><p>Consultas</p></div>
                     <div class="navegacao">
-                    <?php foreach ($view_consultas as $consulta): ?>
+                        <?php foreach ($view_consultas as $consulta): ?>
                             <a href="<?php echo $consulta['url'] ?>"><div class="cons">
                                     <div><?php echo $consulta['descricao']; ?></div>
                                 </div></a>
-                       
-                    <?php endforeach; ?>
+
+                        <?php endforeach; ?>
                     </div>
                     <div id="relatorio" class="title"><p>Relatórios</p></div>
                     <div class="navegacao">
-                    <?php foreach ($view_relatorios as $relatorio): ?>
+                        <?php foreach ($view_relatorios as $relatorio): ?>
                             <a href="<?php echo $relatorio['url'] ?>"><div class="relat">
                                     <div><?php echo $relatorio['descricao']; ?></div>
                                 </div></a>
-                       
-                    <?php endforeach; ?>
+
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
             <div id="footer">
                 <p>Projeto Papagaio Verdadeiro - Glaucia Seixas</p>
             </div>
-            </div>
         </div>
+    </div>
 
-        <script>
-            $(function() {
-            });
-        </script>
-    </body>
+    <script>
+        $(function() {
+        });
+    </script>
+</body>
 </html> 

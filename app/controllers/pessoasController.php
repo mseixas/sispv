@@ -49,7 +49,8 @@ class pessoasController extends Controller {
             $descricao = array('descricao' => $_POST['descricao'],
                 'cargo' => $_POST['cargo'],
                 'email' => $_POST['email'],
-                'email' => $_POST['login']
+                'login' => $_POST['login'],
+                'senha' => md5($_POST['senha'])
             );
             $data = $descricao;
             $model->insert($data);

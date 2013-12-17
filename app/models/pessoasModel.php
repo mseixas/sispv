@@ -22,4 +22,8 @@ class pessoasModel extends Model {
         $where = 'id = '.$id;
         return $this->read($where);
     }
+    public function findByLogin($login){
+        $where = 'login = '.$login;
+        return $this->read($where);
+    }
 }

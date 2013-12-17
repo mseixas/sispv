@@ -1,6 +1,8 @@
+<?php 
+    session_start();
+?>
 ﻿<html>
     <head>
-        
         <title>SISTEMA PAPAGAIO VERDADEIRO</title>
 
         <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
@@ -10,10 +12,6 @@
         <link type="text/css" href="/web-files/style/css/base.css" rel="stylesheet" />
         <link type="text/css" href="/web-files/style/css/home.css" rel="stylesheet" />
         <link type="text/css" href="/web-files/style/css/op.css" rel="stylesheet" />
-
-
-        
-
     </head>
     <body>
         <div class="container">
@@ -22,7 +20,7 @@
                     Sistema Papagaio Verdadeiro
                 </div>
                 <div id="user">
-                    Usuário: Murilo
+                    Usuário: <?php echo $_SESSION['nom']; ?>
                 </div>
             </div>
             <div id="header"></div>

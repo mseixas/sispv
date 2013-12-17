@@ -1,22 +1,36 @@
 <?php
+
 /**
  * Description of pessoas
  *
  * @author MSeixas
  */
 class loginModel extends Model {
-    public $_table = 'arvore';
 
-    public function cons(){
-        $where = 'excluido IS NOT TRUE';
-        return $this->read($where);
+    public $_table = 'pessoas';
+
+    public function index_action() {
+        
     }
-    public function excluir($where){
-        $sql = "UPDATE `{$this->_table}` SET excluido='1' WHERE id IN ({$where})";
-        $this->query($sql);
+
+    public function logar($login, $pass) {
+        $where = 'login = \'' . $login . '\' AND senha = \'' . $pass . '\' AND excluido IS NOT TRUE';
+        $data = $this->read($where);
+
+
+        if ($data != NULL) {
+
+            session_start();
+            $_SESSION['id'] = $data[0]['id'];
+            $_SESSION['nom'] = $data[0]['descricao'];
+            $_SESSION['usu'] = $data[0]['login'];
+            $_SESSION['mail'] = $data[0]['email'];
+            $_SESSION['car'] = $data[0]['cargo'];
+
+            return true;
+        } else {
+            return false;
+        }
     }
-    public function findById($id){
-        $where = 'id = '.$id;
-        return $this->read($where);
-    }
+
 }
