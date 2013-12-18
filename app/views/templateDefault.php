@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-        <link rel="shortcut icon" href="/web-files/style/img/visualizar.ico" type="image/x-icon"> 
+        <link rel="shortcut icon" href="/web-files/style/img/ico.jpg" type="image/x-icon"> 
         <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.9.1.js"></script>        
         <script src="//code.jquery.com/ui/1.10.3/jquery-ui.js"></script>

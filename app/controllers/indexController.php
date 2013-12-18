@@ -3,7 +3,6 @@
 class indexController extends Controller {
 
     public function index_action() {
-//        session_start();
         if (isset($_SESSION['id'])) {
             $this->home();
         } else {
@@ -31,16 +30,13 @@ class indexController extends Controller {
         $pass = md5($_POST['senha']);
         $ok = $model->logar($login, $pass);
         if ($ok) {
-            $local = "/index";
-            $this->redirect($local);
+            $this->redirect("/index");
         } else {
-            $data['erro'] = TRUE;
-            $this->view('login', $data);
+            $this->redirect('/login/erro');
         }
     }
 
     public function deslogar() {
-//        session_start();
         session_destroy();
         $this->redirect('/login');
     }

@@ -1,14 +1,20 @@
-<?php 
+<?php
  if(isset($view_erro)){
      $erro = '<div class="alertLogin">Login/Senha incorreto!</div>';
  }
  else {
      $erro = '';
  }
+ if(isset($view_sessao)){
+     $sessao = '<div class="alertLogin">Sua sessão expirou.</div>';
+ }
+ else {
+     $sessao = '';
+ }
+ 
 ?>
 ﻿<html>
     <head>
-
         <title>SISTEMA PAPAGAIO VERDADEIRO</title>
 
         <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
@@ -33,6 +39,7 @@
             <div class="loginBlock">
                 <div class="loginBox">
                     <?php echo $erro; ?>
+                    <?php echo $sessao; ?>
                     <p>
                         <label for="login" class="cell">Login:</label>
                     </p>

@@ -9,13 +9,20 @@ class System {
     public $_params;
 
     public function __construct() {
+        $this->start();
         $this->setUrl();
         $this->setExplode();
         $this->setController();
         $this->setAction();
         $this->setParams();
     }
-
+    
+    private function start(){
+        if(!isset($_SESSION)){
+            session_start();
+        }
+    }
+    
     private function setUrl() {
         $_GET['url'] = (isset($_GET['url'])) ? $_GET['url'] . '/' : 'index/index_action';
         if( substr($_GET['url'], -2) == '//'){
@@ -73,12 +80,6 @@ class System {
         }
     }
 
-    public function getParams($name = null) {
-        if ($name != null)
-            return $this->_params[$name];
-        return $this->_params;
-    }
-
     public function run() {
         $controller_path = CONTROLLERS . $this->_controller . 'Controller.php';
         if (!file_exists($controller_path)) {
@@ -93,4 +94,14 @@ class System {
         $action = $this->_action;
         $app->$action();
     }
+    
+    public function getParams($name = null) {
+        if ($name != null)
+            return $this->_params[$name];
+        return $this->_params;
+    }    
+    public function getUrl(){
+        $url = explode('/', $this->_url);
+        return $url[0];
+    }    
 }

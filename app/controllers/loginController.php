@@ -8,17 +8,19 @@
 class loginController extends Controller {
 
     public function index_action() {
-        $this->view('login');
+        if (!isset($_SESSION['id']))
+            $this->view('login');
+        else
+            $this->redirect('index');
     }
 
-//    public function logar() {
-//        $model = new loginModel();
-//        $login = $_POST['login'];
-//        $pass = md5($_POST['senha']);
-//        $ok = $model->logar($login, $pass);
-//        if($ok) {
-//        } else {
-//            $this->view('login');
-//        }
-//    }
+    public function expirado() {
+        $data['sessao'] = TRUE;
+        $this->view('login', $data);
+    }
+    public function erro() {
+        $data['erro'] = TRUE;
+        $this->view('login', $data);
+    }
+
 }
