@@ -20,6 +20,8 @@ class Controller extends System {
             if ($segundos > $limit) {
                 session_destroy();
                 $this->redirect('/login/expirado');
+            }else{
+                $_SESSION['time'] = time();
             }
         }
     }
