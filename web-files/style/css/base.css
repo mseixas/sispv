@@ -2,9 +2,12 @@ div{
     border: 0px black solid;          
 }
 body{
-    //background-image: url(../img/arvore.png);
     background-image: url(https://lh3.googleusercontent.com/-NUD-9oJ3Fws/TrwpkcsxL2I/AAAAAAAAFbQ/6EXMTbYBsb8/13.jpg);
+    /*background-image: url(http://static6.depositphotos.com/1007752/673/i/950/depositphotos_6732267-Natural-vintage-linen-burlap-texture-background-tan-beige-yellow.jpg );*/
     background-position: bottom left;
+        /*background-color: #8B4513;*/
+    /*background-image: url('/web-files/style/img/papagaio.png');*/
+    /*background-repeat: no-repeat;*/
     //background-repeat: no-repeat;
     background-size: 400px 400px;
 }
@@ -91,7 +94,7 @@ body{
     width: 100%;
     text-align: center;
     //border-top: 5px green solid;
-    margin-bottom: 50px;
+    /*margin-bottom: 50px;*/
     border-bottom: 5px green solid;
 }
 #footer > p {

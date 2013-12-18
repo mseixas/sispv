@@ -76,5 +76,6 @@
 }
 .dataCons > td{
     border-bottom: 2px orange solid;
+    padding-top: 6px;
 }
 

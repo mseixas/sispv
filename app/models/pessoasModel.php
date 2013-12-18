@@ -8,7 +8,7 @@ class pessoasModel extends Model {
     public $_table = 'pessoas';
 
     public function cons(){
-        $sql = 'SELECT p.id as id, p.descricao as nome, c.descricao as cargo 
+        $sql = 'SELECT p.id as id, p.descricao as nome, login, email, c.descricao as cargo 
                 FROM pessoas p
                 JOIN cargo c ON p.`cargo` = c.`id` 
                 WHERE p.excluido IS NOT TRUE';

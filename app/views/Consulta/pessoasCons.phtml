@@ -12,7 +12,9 @@ require '/app/views/templateDefault.php';
                                 <td></td>
                                 <td>Nome</td>
                                 <td>Cargo</td>
-                                <td></td>
+                                <td>Email</td>
+                                <td>Login</td>
+                                <!--<td></td>-->
                                 <td></td>
                             </tr>
                             <?php foreach ($view_pessoas as $pessoas): ?>
@@ -22,7 +24,9 @@ require '/app/views/templateDefault.php';
                                         </div></td>
                                     <td><?php echo $pessoas['nome']; ?></td>
                                     <td><?php echo $pessoas['cargo']; ?></td>
-                                    <td class="separadorCons"><a href="/pessoas/cad/id/<?php echo $pessoas['id']; ?>" class="consultaButton"><img src="/web-files/style/img/visualizar.ico"></a></td>
+                                    <td><?php echo $pessoas['email']; ?></td>
+                                    <td><?php echo $pessoas['login']; ?></td>
+                                    <!--<td class="separadorCons"><a href="/pessoas/cad/id/<?php echo $pessoas['id']; ?>" class="consultaButton" title="Detalhes"><img src="/web-files/style/img/visualizar.ico"></a></td>-->
                                     <td class="separadorCons"><a href="/pessoas/cad/id/<?php echo $pessoas['id']; ?>" class="consultaButton">EDITAR</a></td>
                                 </tr>
                             <?php endforeach; ?>

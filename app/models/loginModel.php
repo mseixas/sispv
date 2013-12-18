@@ -6,13 +6,8 @@
  * @author MSeixas
  */
 class loginModel extends Model {
-
     public $_table = 'pessoas';
-
-    public function index_action() {
-        
-    }
-
+    
     public function logar($login, $pass) {
         $where = 'login = \'' . $login . '\' AND senha = \'' . $pass . '\' AND excluido IS NOT TRUE';
         $data = $this->read($where);
@@ -23,7 +18,7 @@ class loginModel extends Model {
             $_SESSION['mail'] = $data[0]['email'];
             $_SESSION['car'] = $data[0]['cargo'];
             $_SESSION['time'] = time();
-            $_SESSION['limit'] = 300;
+            $_SESSION['limit'] = 600;
             return true;
         } else {
             return false;
