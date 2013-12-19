@@ -18,7 +18,7 @@ class loginModel extends Model {
             $_SESSION['mail'] = $data[0]['email'];
             $_SESSION['car'] = $data[0]['cargo'];
             $_SESSION['time'] = time();
-            $_SESSION['limit'] = 600;
+            $_SESSION['limit'] = 999999999;
             return true;
         } else {
             return false;

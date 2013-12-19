@@ -30,6 +30,7 @@
 }
 .navegacao{
     display: table;
+    padding-left: 45px;
     /*height:  200px;*/
 }
 .navegacao > a > div{

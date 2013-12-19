@@ -1,0 +1,94 @@
+<?php
+require '/app/views/templateDefault.php';
+?>  
+<?php
+if (isset($view_editar)) {
+    foreach ($view_editar as $editar) {
+        $editar_id = $editar['id'];
+        $editar_local = $editar['local'];
+        $editar_data_ida = $editar['email'];
+        $editar_data_volta = $editar['login'];
+
+        /* Botão */
+        $button = 'editar';
+        $button_name = 'ATUALIZAR';
+        $action = '/id/' . $editar_id;
+    }
+} else {
+    $editar_id = '';
+    $editar_local = '';
+    $editar_data_ida = '';
+    $editar_data_volta = '';
+    /* Botão */
+    $action = '';
+    $button = 'cadastrar';
+    $button_name = 'CADASTRAR';
+}
+?>
+<div>
+    <div id="cadastro" class="title"><p>Cadastro de Pessoas</p></div>
+    <div class="form">
+        <form action="/viagem/cadastrarAction<?php echo $action; ?>" method="post">
+
+            <input id="id" name="id" hidden="" type="text" value="<?php echo $editar_id; ?>">
+            <p>
+                <label for="data_ida" class="cell">Data de Ida:</label>
+            </p>
+            <p>                             
+                <input id="data_ida" name="data_ida" required="required" type="date" value="<?php echo $editar_data_ida; ?>">
+            </p>
+            <p>
+                <label for="data_volta" class="cell">Data de Retorno:</label>
+            </p>
+            <p>                             
+                <input id="data_volta" name="data_volta" required="required" type="date" value="<?php echo $editar_data_volta; ?>">
+            </p>
+            <p>
+                <label class="cell">Destino:</label>
+            </p>
+            <p> 
+                <select name='local'>
+                    <?php foreach ($view_local as $local) : ?>
+                        <option value="<?php echo $local['id']; ?>" <?php if ($local['id'] == $editar_local) echo "selected"; ?>><?php echo $local['descricao'] ?></option>
+                    <?php endforeach; ?>
+                </select></p></td>
+            </p>
+            <div class='consultaDiv'>
+                <table class="tableCons" CELLSPACING = 0>
+                    <tr class="titleCons">
+                        <td></td>
+                        <td>Nome</td>
+                    </tr>
+                    <?php foreach ($view_pessoas as $pessoas): ?>
+                        <tr class="dataCons">
+                            <td class="separadorCons""><div class="consultaCheck">
+                                    <input type="checkbox" id="cad[]" name="cad[]" value="<?php echo $pessoas['id']; ?>">
+                                </div></td>
+                            <td><?php echo $pessoas['nome']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            </div>
+            <div class="controle">
+                <input type="submit" class="<?php echo $button; ?>Button" value="<?php echo $button_name; ?>">
+                <!--<input type="submit" class="cadastrarButton" value="CADASTRAR">-->
+                <a href="/pessoas/cons" class="consultaAllButton">Listar Todos</a>
+<!--                        <input type="submit" class="excluirButton" value="EXCLUIR">
+                <input type="submit" class="editarButton" value="EDITAR">-->
+            </div>
+        </form>
+    </div>
+
+</div>
+
+<div id="footer">
+    <p>Projeto Papagaio Verdadeiro - Glaucia Seixas</p>
+</div>
+</div>
+
+<script>
+    $(function() {
+    });
+</script>
+</body>
+</html> 

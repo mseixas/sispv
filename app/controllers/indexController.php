@@ -11,8 +11,8 @@ class indexController extends Controller {
     }
 
     public function home() {
-
         $model = new menuModel();
+        
         $menu_cadastros = $model->listMenu('tipo = 1');
         $menu_consultas = $model->listMenu('tipo = 2');
         $menu_relatorios = $model->listMenu('tipo = 3');

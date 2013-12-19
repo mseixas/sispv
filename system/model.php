@@ -39,4 +39,9 @@ class Model{
     public function query($sql){
         return $this->db->query($sql);
     }
+    public function queryReturn($sql){
+        $q = $this->db->query($sql);
+        $q->setFetchMode(PDO::FETCH_ASSOC);
+        return $q->fetchAll();
+    }
 }
