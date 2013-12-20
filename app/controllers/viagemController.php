@@ -32,22 +32,6 @@ class viagemController extends Controller {
         $data['pessoas'] = $pessoa;
 
         $this->view('Cadastro/viagemCad', $data);
-//        $id = $this->getParams('id');
-//        
-//        if ($id != null) {
-//            $pessoa = $pessoasModel->findById($id);
-//            if ($pessoa != null) {
-//                $data['editar'] = $pessoa;
-//            } else {
-//                $data['editar'] = array();
-//            }
-//        }
-//        $pessoas = $pessoasModel->cons();
-//        $local = $localModel->cons();
-//        $data['local'] = $local;
-//        $data['pessoas'] = $pessoas;
-//        
-//        $this->view('Cadastro/viagemCad', $data);
     }
 
     public function cons() {
@@ -62,9 +46,10 @@ class viagemController extends Controller {
     }
 
     public function cadastrarAction() {
-        $id = $this->getParams('id');
         $viagemModel       = new viagemModel();
         $pessoaviagemModel = new pessoaviagemModel();
+        
+        $id = $this->getParams('id');
         if ($id == NULL) {
             $descricao = array('data_ida' => $_POST['data_ida'],
                                'data_volta' => $_POST['data_volta'],
@@ -81,7 +66,12 @@ class viagemController extends Controller {
                                'data_volta' => $_POST['data_volta'],
                                'local' => $_POST['local']);
             $where = 'id = ' . $_POST['id'];
-            $model->update($descricao, $where);
+            $viagemModel->update($descricao, $where);
+            $del = $pessoaviagemModel->del($id);
+            $pessoasId = $_POST['cad'];
+            foreach ($pessoasId as $pessoa){
+                $pessoaviagemModel->cad($id, $pessoa);
+            }
             $this->cons();
         }
     }

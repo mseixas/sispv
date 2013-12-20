@@ -18,6 +18,11 @@ class pessoaviagemModel extends Model {
             'pessoa' => $pessoa);
         $this->insert($data);
     }
+    
+    public function del($viagem) {
+        $data = "viagem = ".$viagem;
+        $this->delete($data);
+    }
 
     public function findByPessoa($id) {
         $where = 'pessoa = ' . $id;
