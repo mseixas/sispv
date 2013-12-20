@@ -2,31 +2,30 @@
 require '/app/views/templateDefault.php';
 ?> 
                 <div>
-                    <div id="consulta" class="title"><p>Consulta de &Aacute;rvores</p></div>
+                    <div id="consulta" class="title"><p>Consulta de Esp&eacute;cies</p></div>
                 </div>
-                <form action="/arvore/excluirAction" method="post" onsubmit="return confirm('Tem certeza que deseja excluir as Árvores Selecionadas?')">
+                <form action="/especie/excluirAction" method="post" onsubmit="return confirm('Tem certeza que deseja excluir as Espécies Selecionadas?')">
                     <div class='consultaDiv'>
                         <table class="tableCons" CELLSPACING = 0>
                             <tr class="titleCons">
                                 <td></td>
+                                <td>Sigla</td>
                                 <td>Nome Comum</td>
                                 <td>Nome Científico</td>
-                                <td>Autor</td>
-                                <td>Ano</td>
                                 <!--<td></td>-->
                                 <td></td>
                             </tr>
-                            <?php foreach ($view_arvore as $arvore): ?>
+                            <?php foreach ($view_especie as $especie): ?>
                                 <tr class="dataCons">
                                     <td class="separadorCons""><div class="consultaCheck">
-                                            <input type="checkbox" id="del[]" name="del[]" value="<?php echo $arvore['id']; ?>">
+                                            <input type="checkbox" id="del[]" name="del[]" value="<?php echo $especie['id']; ?>">
                                         </div></td>
-                                    <td><?php echo $arvore['descricao']; ?></td>
-                                    <td><?php echo $arvore['nome_cientifico']; ?></td>
-                                    <td><?php echo $arvore['autor']; ?></td>
-                                    <td><?php echo $arvore['ano']; ?></td>
-                                    <!--<td class="separadorCons"><a href="/arvore/cad/id/<?php // echo $arvore['id']; ?>" class="consultaButton"><img src="/web-files/style/img/visualizar.ico"></a></td>-->
-                                    <td class="separadorCons"><a href="/arvore/cad/id/<?php echo $arvore['id']; ?>" class="consultaButton">EDITAR</a></td>
+                                        
+                                    <td><?php echo $especie['sigla']; ?></td>
+                                    <td><?php echo $especie['descricao']; ?></td>
+                                    <td><?php echo $especie['nome_cientifico']; ?></td>
+                                    <!--<td class="separadorCons"><a href="/arvore/cad/id/<?php // echo $especie['id']; ?>" class="consultaButton"><img src="/web-files/style/img/visualizar.ico"></a></td>-->
+                                    <td class="separadorCons"><a href="/especie/cad/id/<?php echo $especie['id']; ?>" class="consultaButton">EDITAR</a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </table>
@@ -35,7 +34,7 @@ require '/app/views/templateDefault.php';
             <div class="controle">
                 <!--<input type="submit" class="cadastrarButton" value="CADASTRAR">-->
                 <input type="submit" class="excluirButton" value="EXCLUIR">
-                <a href="/arvore/cad" class="cadastrarNovoButton">Cadastrar Novo</a>
+                <a href="/especie/cad" class="cadastrarNovoButton">Cadastrar Novo</a>
                 <!--<input type="submit" class="editarButton" value="EDITAR">-->
             </div>
         </form>

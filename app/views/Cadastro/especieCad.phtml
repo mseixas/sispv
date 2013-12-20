@@ -1,0 +1,76 @@
+<?php
+require '/app/views/templateDefault.php';
+?> 
+                <?php
+                if (isset($view_editar)) {
+                    foreach ($view_editar as $editar) {
+                        $editar_id = $editar['id'];
+                        $editar_sigla = $editar['sigla'];
+                        $editar_nome = $editar['descricao'];
+                        $editar_cientifico = $editar['nome_cientifico'];
+
+                        /* Botão */
+                        $button = 'editar';
+                        $button_name = 'ATUALIZAR';
+                        $action = '/id/' . $editar_id;
+                    }
+                } else {
+                    $editar_id = '';
+                    $editar_sigla = '';
+                    $editar_nome = '';
+                    $editar_cientifico = '';
+
+                    /* Botão */
+                    $action = '';
+                    $button = 'cadastrar';
+                    $button_name = 'CADASTRAR';
+                }
+                ?>
+                <div>
+                    <div id="cadastro" class="title"><p>Cadastro de Esp&eacute;cie</p></div>
+                    <div class="form">
+                        <form action="/especie/cadastrarAction<?php echo $action; ?>" method="post">
+
+                            <input id="id" name="id" hidden="" type="text" value="<?php echo $editar_id; ?>">
+                            <p>
+                                <label for="sigla" class="cell">SIGLA:</label>
+                            </p>
+                            <p>
+                                <input id="sigla" name="sigla" size="5"  maxlength="3" required="required" type="text" value="<?php echo $editar_sigla; ?>">
+                            </p>
+                            <p>
+                                <label for="descricao" class="cell">NOME COMUM:</label>
+                            </p>
+                            <p>
+                                <input id="descricao" name="descricao" size="50" required="required" type="text" value="<?php echo $editar_nome; ?>">
+                            </p>
+                            <p>
+                                <label for="nome_cientifico" class="cell">NOME CIENT&Iacute;FICO:</label>
+                            </p>
+                            <p>
+                                <input id="nome_cientifico" name="nome_cientifico" size="50" required="required" type="text" value="<?php echo $editar_cientifico; ?>">
+                            </p>
+                    </div>
+                    <div class="controle">
+                        <input type="submit" class="<?php echo $button; ?>Button" value="<?php echo $button_name; ?>">
+                        <!--<input type="submit" class="cadastrarButton" value="CADASTRAR">-->
+                        <a href="/especie/cons" class="consultaAllButton">Listar Todos</a>
+<!--                        <input type="submit" class="excluirButton" value="EXCLUIR">
+                        <input type="submit" class="editarButton" value="EDITAR">-->
+                    </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <div id="footer">
+                <p>Projeto Papagaio Verdadeiro - Glaucia Seixas</p>
+            </div>
+        </div>
+
+        <script>
+            $(function() {
+            });
+        </script>
+    </body>
+</html> 

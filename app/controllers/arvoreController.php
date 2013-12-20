@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of pessoasController
+ * Description of arvoreController
  *
  * @author MSeixas
  */
@@ -11,13 +11,13 @@ class arvoreController extends Controller {
     }
 
     public function cad() {
-        $pessoasModel = new arvoreModel();
+        $arvoreModel = new arvoreModel();
 
         $id = $this->getParams('id');
         if ($id != null) {
-            $pessoa = $pessoasModel->findById($id);
-            if ($pessoa != null) {
-                $data['editar'] = $pessoa;
+            $arvore = $arvoreModel->findById($id);
+            if ($arvore != null) {
+                $data['editar'] = $arvore;
             } else {
                 $data['editar'] = array();
             }
