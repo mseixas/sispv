@@ -14,10 +14,16 @@ class viagemController extends Controller {
     public function cad() {
         $pessoasModel = new pessoasModel();
         $localModel = new localModel();
-        
+        $viagemModel = new viagemModel();
         $id = $this->getParams('id');
-        
-                
+        if ($id != null) {
+            $editar = $viagemModel->findEdit($id);
+            if ($editar != null) {
+                $data['editar'] = $editar;
+            } else {
+                $data['editar'] = array();
+            }
+        }
         
         $local = $localModel->cons();
         $pessoa = $pessoasModel->cons();
@@ -71,10 +77,9 @@ class viagemController extends Controller {
             }
             $this->cons();
         } else {
-            $descricao = array('descricao' => $_POST['descricao'],
-                'cargo' => $_POST['cargo'],
-                'email' => $_POST['email'],
-                'login' => $_POST['login']);
+            $descricao = array('data_ida' => $_POST['data_ida'],
+                               'data_volta' => $_POST['data_volta'],
+                               'local' => $_POST['local']);
             $where = 'id = ' . $_POST['id'];
             $model->update($descricao, $where);
             $this->cons();
@@ -82,7 +87,7 @@ class viagemController extends Controller {
     }
 
     public function excluirAction() {
-        $model = new pessoasModel();
+        $model = new viagemModel();
         $where = $_POST['del'];
         $where = implode(', ', $where);
         $model->excluir($where);

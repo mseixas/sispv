@@ -2,54 +2,55 @@
 require '/app/views/templateDefault.php';
 ?>
 
-                <div>
-                    <div id="consulta" class="title"><p>Consulta de Pessoas</p></div>
-                </div>
-                <form action="/viagem/excluirAction" method="post">
-                    
-                    <div class='consultaDiv'>
-                        <table class="tableCons" CELLSPACING = 0>
-                            <tr class="titleCons">
-                                <td></td>
-                                <td>Data Ida</td>
-                                <td>Data Retorno</td>
-                                <td>Local</td>
-                                <td>Integrantes</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <?php foreach ($view_viagem as $viagem): ?>
-                                <tr class="dataCons">
-                                    <td class="separadorCons""><div class="consultaCheck">
-                                            <input type="checkbox" id="del[]" name="del[]" value="<?php echo $viagem['id']; ?>">
-                                        </div></td>
-                                    <td><?php echo $viagem['data_ida']; ?></td>
-                                    <td><?php echo $viagem['data_volta']; ?></td>
-                                    <td><?php echo $viagem['local']; ?></td>
-                                    <td><?php $pessoa = explode('/', $viagem['pessoas']);
-                                              foreach ($pessoa AS $nome){
-                                                  echo $nome.'<br>';
-                                              }
-                                              ?></td>
-                                    <td class="separadorCons"><a href="/viagem/cad/id/<?php echo $viagem['id']; ?>" class="consultaButton" title="Detalhes"><img src="/web-files/style/img/visualizar.ico"></a></td>
-                                    <td class="separadorCons"><a href="/viagem/cad/id/<?php echo $viagem['id']; ?>" class="consultaButton">EDITAR</a></td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </table>
-                    </div>
-                    
-            </div>
-            <div class="controle">
-                <!--<input type="submit" class="cadastrarButton" value="CADASTRAR">-->
-                <input type="submit" class="excluirButton" value="EXCLUIR">
-                <a href="/viagem/cad" class="cadastrarNovoButton">Cadastrar Novo</a>
-                <!--<input type="submit" class="editarButton" value="EDITAR">-->
-            </div>
-        </form>
-        <div id="footer">
-            <p>Projeto Papagaio Verdadeiro - Glaucia Seixas</p>
-        </div>
+<div>
+    <div id="consulta" class="title"><p>Consulta de Pessoas</p></div>
+</div>
+<form action="/viagem/excluirAction" method="post">
+
+    <div class='consultaDiv'>
+        <table class="tableCons" CELLSPACING = 0>
+            <tr class="titleCons">
+                <td></td>
+                <td>Data Ida</td>
+                <td>Data Retorno</td>
+                <td>Local</td>
+                <td>Integrantes</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <?php foreach ($view_viagem as $viagem): ?>
+                <tr class="dataCons">
+                    <td class="separadorCons""><div class="consultaCheck">
+                            <input type="checkbox" id="del[]" name="del[]" value="<?php echo $viagem['id']; ?>">
+                        </div></td>
+                    <td><?php echo $viagem['data_ida']; ?></td>
+                    <td><?php echo $viagem['data_volta']; ?></td>
+                    <td><?php echo $viagem['local']; ?></td>
+                    <td><?php
+                        $pessoa = explode('/', $viagem['pessoas']);
+                        foreach ($pessoa AS $nome) {
+                            echo $nome . '<br>';
+                        }
+                        ?></td>
+                    <td class="separadorCons"><a href="/viagem/cad/id/<?php echo $viagem['id']; ?>" class="consultaButton" title="Detalhes"><img src="/web-files/style/img/visualizar.ico"></a></td>
+                    <td class="separadorCons"><a href="/viagem/cad/id/<?php echo $viagem['id']; ?>" class="consultaButton">EDITAR</a></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
     </div>
+
+</div>
+<div class="controle">
+    <!--<input type="submit" class="cadastrarButton" value="CADASTRAR">-->
+    <input type="submit" class="excluirButton" value="EXCLUIR">
+    <a href="/viagem/cad" class="cadastrarNovoButton">Cadastrar Novo</a>
+    <!--<input type="submit" class="editarButton" value="EDITAR">-->
+</div>
+</form>
+<div id="footer">
+    <p>Projeto Papagaio Verdadeiro - Glaucia Seixas</p>
+</div>
+</div>
 </div>
 
 <script>
