@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Description of localController
+ * Description of pessoasController
  *
  * @author MSeixas
  */
-class localController extends Controller {
+class pessoasController extends Controller {
 
     public function index_action() {
         
@@ -13,29 +13,29 @@ class localController extends Controller {
 
     public function cad() {
 
-        $localModel = new localModel();
-        $cidadeModel = new cidadeModel();
+        $pessoasModel = new pessoasModel();
+        $cargoModel = new cargoModel();
 
         $id = $this->getParams('id');
         if ($id != null) {
-            $pessoa = $localModel->findById($id);
+            $pessoa = $pessoasModel->findById($id);
             if ($pessoa != null) {
                 $data['editar'] = $pessoa;
             } else {
                 $data['editar'] = array();
             }
         }
-        $cidade = $cidadeModel->cons();
-        $data['cidade'] = $cidade;
-        $this->view('Cadastro/localCad', $data);
+        $cargo = $cargoModel->cons();
+        $data['cargo'] = $cargo;
+        $this->view('Cadastro/pessoasCad', $data);
     }
 
     public function cons() {
-        $model = new localModel();
-        $local = $model->cons();
-        $data['local'] = $local;
+        $model = new pessoasModel();
+        $pessoas = $model->cons();
+        $data['pessoas'] = $pessoas;
 
-        $this->view('Consulta/localCons', $data);
+        $this->view('Consulta/pessoasCons', $data);
     }
 
     public function editarAction() {
@@ -44,19 +44,23 @@ class localController extends Controller {
 
     public function cadastrarAction() {
         $id = $this->getParams('id');
-        $model = new localModel();
+        $model = new pessoasModel();
         if ($id == NULL) {
             $descricao = array('descricao' => $_POST['descricao'],
-                'latitude' => $_POST['latitude'],
-                'longitude' => $_POST['longitude'],
-                'cidade' => $_POST['cidade']);
-            $model->insert($descricao);
+                'cargo' => $_POST['cargo'],
+                'email' => $_POST['email'],
+                'login' => $_POST['login'],
+                'senha' => md5($_POST['senha'])
+            );
+            $data = $descricao;
+            $model->insert($data);
             $this->cons();
         } else {
             $descricao = array('descricao' => $_POST['descricao'],
-                'latitude' => $_POST['latitude'],
-                'longitude' => $_POST['longitude'],
-                'cidade' => $_POST['cidade']);
+                'cargo' => $_POST['cargo'],
+                'email' => $_POST['email'],
+                'login' => $_POST['login']
+            );
             $where = 'id = ' . $_POST['id'];
             $model->update($descricao, $where);
             $this->cons();
@@ -64,7 +68,7 @@ class localController extends Controller {
     }
 
     public function excluirAction() {
-        $model = new localModel();
+        $model = new pessoasModel();
         $where = $_POST['del'];
         $where = implode(', ', $where);
         $model->excluir($where);

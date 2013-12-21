@@ -1,0 +1,55 @@
+<?php
+require '/app/views/templateDefault.php';
+?> 
+                <div>
+                    <div id="consulta" class="title"><p>Consulta de Local</p></div>
+                </div>
+                <form action="/local/excluirAction" method="post">
+                    
+                    <div class='consultaDiv'>
+                        <table class="tableCons" CELLSPACING = 0>
+                            <tr class="titleCons">
+                                <td></td>
+                                <td>Nome</td>
+                                <td>Latitude</td>
+                                <td>Longitude</td>
+                                <td>Cidade</td>
+                                <!--<td></td>-->
+                                <td></td>
+                            </tr>
+                            <?php foreach ($view_local as $local): ?>
+                                <tr class="dataCons">
+                                    <td class="separadorCons""><div class="consultaCheck">
+                                            <input type="checkbox" id="del[]" name="del[]" value="<?php echo $local['id']; ?>">
+                                        </div></td>
+                                    <td><?php echo $local['descricao']; ?></td>
+                                    <td><?php echo $local['latitude']; ?></td>
+                                    <td><?php echo $local['longitude']; ?></td>
+                                    <td><?php echo $local['cidade']; ?></td>
+                                    <!--<td class="separadorCons"><a href="/local/cad/id/<?php // echo $local['id']; ?>" class="consultaButton" title="Detalhes"><img src="/web-files/style/img/visualizar.ico"></a></td>-->
+                                    <td class="separadorCons"><a href="/local/cad/id/<?php echo $local['id']; ?>" class="consultaButton">EDITAR</a></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+                    </div>
+                    
+            </div>
+            <div class="controle">
+                <!--<input type="submit" class="cadastrarButton" value="CADASTRAR">-->
+                <input type="submit" class="excluirButton" value="EXCLUIR">
+                <a href="/local/cad" class="cadastrarNovoButton">Cadastrar Novo</a>
+                <!--<input type="submit" class="editarButton" value="EDITAR">-->
+            </div>
+        </form>
+        <div id="footer">
+            <p>Projeto Papagaio Verdadeiro - Glaucia Seixas</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function() {
+    });
+</script>
+</body>
+</html> 

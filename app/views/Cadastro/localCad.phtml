@@ -1,0 +1,93 @@
+<?php
+require '/app/views/templateDefault.php';
+?>  
+<?php
+if (isset($view_editar)) {
+    foreach ($view_editar as $editar) {
+        $editar_id = $editar['id'];
+        $editar_nome = $editar['descricao'];
+        $editar_cidade = $editar['cidade'];
+        $editar_latitude = $editar['latitude'];
+        $editar_longitude = $editar['longitude'];
+
+        /* Botão */
+        $button = 'editar';
+        $button_name = 'ATUALIZAR';
+        $action = '/id/' . $editar_id;
+    }
+} else {
+    $editar_id = '';
+    $editar_nome = '';
+    $editar_cidade = '';
+    $editar_latitude = '';
+    $editar_longitude = '';
+
+    /* Botão */
+    $action = '';
+    $button = 'cadastrar';
+    $button_name = 'CADASTRAR';
+}
+?>
+<div>
+    <div id="cadastro" class="title"><p>Cadastro de Local</p></div>
+    <div class="form">
+        <form action="/local/cadastrarAction<?php echo $action; ?>" method="post">
+
+            <input id="id" name="id" hidden="" type="text" value="<?php echo $editar_id; ?>">
+            <p>
+                <label for="descricao" class="cell">NOME:</label>
+            </p>
+            <p>                             
+                <input id="descricao" name="descricao" size="30" required="required" type="text" value="<?php echo $editar_nome; ?>">
+            </p>
+            <p>
+                <label for="latitude" class="cell">LATITUDE:</label>
+            </p>
+            <p>                             
+                <input id="latitude" name="latitude" min="-2000000000" max="-1000000000" required="required" type="number" value="<?php echo $editar_latitude; ?>">
+            </p>
+            </p>
+            <p>
+                <label for="longitude" class="cell">LONGITUDE:</label>
+            </p>
+            <p>                             
+                <input id="longitude" name="longitude" min="-6000000000" max="-5000000000" required="required" type="number" value="<?php echo $editar_longitude; ?>">
+            </p>
+            <p>
+                <label class="cell">CIDADE:</label>
+            </p>
+            <p> 
+                <select name='cidade'>
+                    <option value="">Selecione..</option>
+                    <?php foreach ($view_cidade as $cidade) : ?>
+                        <option value="<?php echo $cidade['id']; ?>" <?php if ($cidade['id'] == $editar_cidade) echo "selected"; ?>> <?php echo $cidade['descricao'] ?></option>
+                    <?php endforeach; ?>
+                </select></p></td>
+            </p>
+            </tr>
+            </table>
+
+    </div>
+    <div class="controle">
+        <input type="submit" class="<?php echo $button; ?>Button" value="<?php echo $button_name; ?>">
+        <!--<input type="submit" class="cadastrarButton" value="CADASTRAR">-->
+        <a href="/local/cons" class="consultaAllButton">Listar Todos</a>
+<!--                        <input type="submit" class="excluirButton" value="EXCLUIR">
+        <input type="submit" class="editarButton" value="EDITAR">-->
+    </div>
+</form>
+</div>
+
+</div>
+
+<div id="footer">
+    <p>Projeto Papagaio Verdadeiro - Glaucia Seixas</p>
+</div>
+</div>
+
+<script>
+    $(function() {
+    });
+</script>
+</body>
+</html> 
