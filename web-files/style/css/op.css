@@ -58,11 +58,13 @@
 .separadorCons{
     width: 10px;
 }
-.tableCons{
+.tableCons,
+.tableCad{
     margin-top: 30px;
     width: 100%;
     text-align: center;
 }
+.titleCad > td,
 .titleCons > td{
     margin-top: 10px;
     font-weight: bold;
@@ -72,10 +74,28 @@
     opacity:0.65;
     -moz-opacity: 0.65;
     filter: alpha(opacity=65);
-    background: orange;    
 }
-.dataCons > td{
-    border-bottom: 2px orange solid;
+.titleCons > td{
+    background: orange;
+}
+.titleCad > td{
+    background: green;
+}
+.dataCons > td,
+.dataCad >td{
+    border-bottom: 2px solid;
     padding-top: 6px;
 }
-
+.dataCons > td{
+    border-color: orange;
+}
+.dataCad > td{
+    border-color: green;
+}
+.dataCad:hover{
+    background: #C1FFC1;
+}
+.dataCons:hover{
+     background: #FFE7BA;
+    
+}

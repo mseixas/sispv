@@ -58,14 +58,14 @@ if (isset($view_editar)) {
                 </select></p></td>
             </p>
             <div class='consultaDiv'>
-                <table class="tableCons" CELLSPACING = 0>
-                    <tr class="titleCons">
+                <table class="tableCad" CELLSPACING = 0>
+                    <tr class="titleCad">
                         <td></td>
                         <td>Nome</td>
                     </tr>
                     <?php foreach ($view_pessoas as $pessoas): ?>
-                        <tr class="dataCons">
-                            <td class="separadorCons""><div class="consultaCheck">
+                        <tr class="dataCad">
+                            <td class="separadorCad""><div class="consultaCheck">
                                         <input type="checkbox" id="cad[]" name="cad[]" value="<?php echo $pessoas['id']; ?>" 
                                             <?php  if(isset($pessoasid))
                                                     foreach ($pessoasid AS $id){
