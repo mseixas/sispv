@@ -8,7 +8,7 @@
 class localController extends Controller {
 
     public function index_action() {
-        
+        $this->cad();
     }
 
     public function cad() {

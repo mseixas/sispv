@@ -58,6 +58,9 @@
 .separadorCons{
     width: 10px;
 }
+.consultaCheck{
+    width: 2px; 
+}
 .tableCons,
 .tableCad{
     margin-top: 30px;
