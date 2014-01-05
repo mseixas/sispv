@@ -5,8 +5,8 @@ class Model{
     public $_table;
     
     public function __construct() {
-        $this->db = new PDO('mysql:host=localhost;dbname=sistemapv', 'root', '');
-		//$this->db = new PDO('mysql:host=184.172.165.17;dbname=nomos172_sistemapv', 'nomos172_sispv', '51573m4pv');
+        //$this->db = new PDO('mysql:host=localhost;dbname=sistemapv', 'root', '');
+		$this->db = new PDO('mysql:host=184.172.165.17;dbname=nomos172_sistemapv', 'nomos172_sispv', '51573m4pv');
     }
     public function insert( Array $data ){
         $campos = implode(", ", array_keys($data));

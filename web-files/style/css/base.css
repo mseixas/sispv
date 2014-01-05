@@ -5,20 +5,25 @@ body{
     background-image: url(https://lh3.googleusercontent.com/-NUD-9oJ3Fws/TrwpkcsxL2I/AAAAAAAAFbQ/6EXMTbYBsb8/13.jpg);
     /*background-image: url(http://static6.depositphotos.com/1007752/673/i/950/depositphotos_6732267-Natural-vintage-linen-burlap-texture-background-tan-beige-yellow.jpg );*/
     background-position: bottom left;
-        /*background-color: #8B4513;*/
+    /*background-color: #8B4513;*/
     /*background-image: url('/web-files/style/img/papagaio.png');*/
     /*background-repeat: no-repeat;*/
     //background-repeat: no-repeat;
     background-size: 400px 400px;
+    margin:0;
+    text-align:center;
+    padding:0;
 }
 .container{
-    position: absolute;
-    /*width: 1001px;*/
-    width: 50%;
-/*    padding-left: 25%; 
-    padding-right: 25%;*/
-    margin-left: 25%;
-    display: table;
+    /*position: absolute;*/
+    width: 1001px;
+    margin:0 auto;
+    text-align:left; 
+    /*width: 50%;*/
+    /*    padding-left: 25%; 
+        padding-right: 25%;*/
+    /*margin-left: 25%;*/
+    /*display: table;*/
 }
 /*Inicio do header*/
 .bar{
@@ -297,7 +302,7 @@ label:hover{
     opacity:0.8;
     -moz-opacity: 0.8;
     filter: alpha(opacity=80);
-     -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -o-border-radius: 10px;
     -ms-border-radius: 10px;

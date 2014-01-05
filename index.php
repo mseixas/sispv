@@ -4,6 +4,8 @@ define('CONTROLLERS', 'app/controllers/');
 define('VIEWS', 'app/views/');
 define('MODELS', 'app/models/');
 define('HELPERS', 'system/helpers/');
+//define('TEMPLATE', '/home/nomos172/public_html/mseixas.com.br/app/views/');
+define('TEMPLATE', '/app/views/');
 
 require_once 'system/system.php';
 require_once 'system/controller.php';
