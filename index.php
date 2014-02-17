@@ -13,10 +13,10 @@ require_once 'system/model.php';
 
 function __autoload($file) {
     //echo '<br>file: '. $file.'<br>';
-    if (file_exists(MODELS.$file.'.php'))
-            require_once MODELS.$file.'.php';
-    else if (file_exists(HELPERS.$file.'Helper.php'))
-        require_once HELPERS.$file.'Helper.php';
+    if (file_exists(MODELS . $file . '.php'))
+        require_once MODELS . $file . '.php';
+    else if (file_exists(HELPERS . $file . 'Helper.php'))
+        require_once HELPERS . $file . 'Helper.php';
     else
         die("Model/Helper não encontrado");
 }

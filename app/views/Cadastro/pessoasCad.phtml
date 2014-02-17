@@ -31,7 +31,7 @@ require TEMPLATE.'templateDefault.php';
                 <div>
                     <div id="cadastro" class="title"><p>Cadastro de Pessoas</p></div>
                     <div class="form">
-                        <form action="/pessoas/cadastrarAction<?php echo $action; ?>" method="post">
+                        <form action="/pessoas/cadastrarAction<?php echo $action; ?>" method="post" onsubmit="return confirm('Cadastrar/Alterar?')">
 
                             <input id="id" name="id" hidden="" type="text" value="<?php echo $editar_id; ?>">
                             <p>
@@ -56,7 +56,7 @@ require TEMPLATE.'templateDefault.php';
                                 <label for="senha" class="cell">SENHA:</label>
                             </p>
                             <p>                             
-                                <input id="senha" name="senha" required="required" type="password" <?php echo $editar_senha ?>>
+                                <input id="senha" name="senha" required="required" type="password" <?=$editar_senha?>>
                             </p>
                             <p>
                                 <label class="cell">CARGO:</label>

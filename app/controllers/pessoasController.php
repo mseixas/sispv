@@ -39,7 +39,15 @@ class pessoasController extends Controller {
     }
 
     public function editarAction() {
-        
+        $model = new pessoasModel();
+        $descricao = array('descricao' => $_POST['descricao'],
+                'cargo' => $_POST['cargo'],
+                'email' => $_POST['email'],
+                'login' => $_POST['login']
+            );
+            $where = 'id = ' . $_POST['id'];
+            $model->editar($descricao, $where);
+            $this->cons();
     }
 
     public function cadastrarAction() {
@@ -56,14 +64,7 @@ class pessoasController extends Controller {
             $model->insert($data);
             $this->cons();
         } else {
-            $descricao = array('descricao' => $_POST['descricao'],
-                'cargo' => $_POST['cargo'],
-                'email' => $_POST['email'],
-                'login' => $_POST['login']
-            );
-            $where = 'id = ' . $_POST['id'];
-            $model->update($descricao, $where);
-            $this->cons();
+            $this->editarAction();
         }
     }
 

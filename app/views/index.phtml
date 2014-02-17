@@ -7,24 +7,24 @@ require 'templateDefault.php';
                     <div id="cadastro" class="title"><p>Cadastro</p></div>
                     <div class="navegacao">
                         <?php foreach ($view_cadastros as $cadastro): ?>
-                            <a href="<?php echo $cadastro['url'] ?>"><div class="cad">
-                                    <div><?php echo $cadastro['descricao']; ?></div>
+                            <a href="<?=$cadastro['url'] ?>"><div class="cad">
+                                    <div><?=utf8_encode($cadastro['descricao']); ?></div>
                                 </div></a>
                         <?php endforeach; ?>
                     </div>
                     <div id="consulta" class="title"><p>Consultas</p></div>
                     <div class="navegacao">
                         <?php foreach ($view_consultas as $consulta): ?>
-                            <a href="<?php echo $consulta['url'] ?>"><div class="cons">
-                                    <div><?php echo $consulta['descricao']; ?></div>
+                            <a href="<?=$consulta['url'] ?>"><div class="cons">
+                                    <div><?=utf8_encode($consulta['descricao']); ?></div>
                                 </div></a>
                         <?php endforeach; ?>
                     </div>
                     <div id="relatorio" class="title"><p>Relatórios</p></div>
                     <div class="navegacao">
                         <?php foreach ($view_relatorios as $relatorio): ?>
-                            <a href="<?php echo $relatorio['url'] ?>"><div class="relat">
-                                    <div><?php echo $relatorio['descricao']; ?></div>
+                            <a href="<?=$relatorio['url'] ?>"><div class="relat">
+                                    <div><?=utf8_encode($relatorio['descricao']); ?></div>
                                 </div></a>
                         <?php endforeach; ?>
                     </div>

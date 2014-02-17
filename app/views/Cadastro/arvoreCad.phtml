@@ -31,39 +31,38 @@ require TEMPLATE.'templateDefault.php';
                 <div>
                     <div id="cadastro" class="title"><p>Cadastro de &Aacute;rvores</p></div>
                     <div class="form">
-                        <form action="/arvore/cadastrarAction<?php echo $action; ?>" method="post">
+                        <form action="/arvore/cadastrarAction<?=$action; ?>" method="post">
 
                             <input id="id" name="id" hidden="" type="text" value="<?php echo $editar_id; ?>">
                             <p>
                                 <label for="descricao" class="cell">NOME COMUM:</label>
                             </p>
                             <p>
-                                <input id="descricao" name="descricao" size="50" required="required" type="text" value="<?php echo $editar_nome; ?>">
+                                <input id="descricao" name="descricao" size="50" required="required" type="text" value="<?=$editar_nome; ?>">
                             </p>
                             <p>
                                 <label for="nome_cientifico" class="cell">NOME CIENT&Iacute;FICO:</label>
                             </p>
                             <p>
-                                <input id="nome_cientifico" name="nome_cientifico" size="50" required="required" type="text" value="<?php echo $editar_cientifico; ?>">
+                                <input id="nome_cientifico" name="nome_cientifico" size="50" required="required" type="text" value="<?=$editar_cientifico; ?>">
                             </p>
                             <p>
                                 <label for="autor" class="cell">AUTOR:</label>
                             </p>
                             <p>
-                                <input id="autor" name="autor" size="50" required="required" type="text" value="<?php echo $editar_autor; ?>">
+                                <input id="autor" name="autor" size="50" required="required" type="text" value="<?=$editar_autor; ?>">
                             </p>
                             <p>
                                 <label for="ano" class="cell">ANO:</label>
                             </p>
                             <p>
-                                <input id="ano" name="ano" size="5" required="required" type="text" value="<?php echo $editar_ano; ?>">
+                                <input id="ano" name="ano" size="5" required="required" type="number" value="<?=$editar_ano; ?>">
                             </p>
                             </tr>
                             </table>
-
                     </div>
                     <div class="controle">
-                        <input type="submit" class="<?php echo $button; ?>Button" value="<?php echo $button_name; ?>">
+                        <input type="submit" class="<?=$button; ?>Button" value="<?=$button_name; ?>">
                         <!--<input type="submit" class="cadastrarButton" value="CADASTRAR">-->
                         <a href="/arvore/cons" class="consultaAllButton">Listar Todos</a>
 <!--                        <input type="submit" class="excluirButton" value="EXCLUIR">
